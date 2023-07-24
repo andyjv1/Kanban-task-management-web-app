@@ -43,7 +43,7 @@ const BoardLayout = ({ sidebarOpen, setSidebarOpen }) => {
                 {board ?  <Outlet
                     context={{
                         board, id, width, setSidebarOpen, sidebarOpen, dark }}
-                /> : !board && window.location.pathname === "/" ? <Outlet
+                /> : (!board && window.location.pathname === "/") || (!board && window.location.pathname === "/createboard" )? <Outlet
                     context={{
                             board, id, width, setSidebarOpen, sidebarOpen, dark }}
                     /> : <NotFound setSidebarOpen={setSidebarOpen}
