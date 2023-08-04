@@ -5,14 +5,11 @@ const Column = ({ columnid, boardId, dark }) => {
     // Get individual Column data with id
     const column = useSelector(state => selectColumnById(state, columnid))
 
-    // Get a random color
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-
     if (column) {
         return (
             <div className="column-container">
                 <div className="column-container__name">
-                    <span style={{ backgroundColor: `#${randomColor}` }}></span>
+                    <span style={{ backgroundColor: `#${column.color}` }}></span>
                     <p>{column.name}</p>
                     <p>({column.tasks.length})</p>
                 </div>
